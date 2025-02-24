@@ -13,7 +13,7 @@ const Header = () => {
         <div className={toggle ? "nav__menu show-menu" : "nav__menu"}>
           <ul className="nav__list grid">
             <li className="nav__item">
-              <a href="#home" className="nav__link">
+              <a href="#home" className="nav__link active-link">
                 <i className="uil uil-estate nav__icon"> </i>Acceuil
               </a>
             </li>
@@ -45,13 +45,14 @@ const Header = () => {
             </li>
           </ul>
           <i
-            className="uil uil-message nav__close"
+            className="bi bi-x-lg nav__close"
             onClick={() => seToggle(!toggle)}
           ></i>
         </div>
         <div className="nav__toggle" onClick={() => seToggle(!toggle)}>
           <i className="uil uil-apps"></i>
         </div>
+        
       </nav>
     </header>
   );
