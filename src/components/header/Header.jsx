@@ -1,5 +1,8 @@
+import { useState } from "react";
 
 const Header = () => {
+  const [toggle, seToggle] = useState(false)
+
   return (
     <header className="header">
       <nav className="nav container">
@@ -7,7 +10,7 @@ const Header = () => {
           Frankam.
         </a>
 
-        <div className="nav__menu">
+        <div className={toggle ? "nav__menu show-menu" : "nav__menu"}>
           <ul className="nav__list grid">
             <li className="nav__item">
               <a href="#home" className="nav__link">
@@ -19,7 +22,6 @@ const Header = () => {
                 <i className="uil uil-user nav__icon"> </i>A Propos
               </a>
             </li>
-           
 
             <li className="nav__item">
               <a href="#skills" className="nav__link">
@@ -42,12 +44,13 @@ const Header = () => {
               </a>
             </li>
           </ul>
-
-          <i className="uil uil-times nav__close"></i>
-          <div className="nav__toggle">
-          <i className="uil uil-apps nav__close"></i>
-            
-           </div>
+          <i
+            className="uil uil-message nav__close"
+            onClick={() => seToggle(!toggle)}
+          ></i>
+        </div>
+        <div className="nav__toggle" onClick={() => seToggle(!toggle)}>
+          <i className="uil uil-apps"></i>
         </div>
       </nav>
     </header>
